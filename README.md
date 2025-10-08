@@ -113,4 +113,15 @@ This part is acquired from https://discuss.bluerobotics.com/t/opencv-python-with
 
 ---
 
-✅ Your PX4 + Gazebo Python setup with camera streaming is ready!
+## Python Code explanation
+1. Import the transport
+   ```bash
+   import gz.transport13 as gz 
+   import gz.msgs10.image_pb2 as msgs
+   ```
+2. create the subscriber
+      ```bash
+   self.node = gz.Node()
+   self.sub = self.node.subscribe(msgs.Image, "/camera", self.image_callback) #image_callback is the function that will be run after the video is captured in gazebo
+   ```
+You can initialize the writer with gstreamer to the port you want to stream to, and then write the stream from subscriber as the class VideoUDPWriter does
