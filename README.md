@@ -52,7 +52,7 @@ This guide explains how to set up a Python virtual environment that can stream g
 ---
 
 ## Step 3: Install GStreamer and Build OpenCV with GStreamer
-
+This part is acquired from https://discuss.bluerobotics.com/t/opencv-python-with-gstreamer-backend/8842
 1. If you already have OpenCV installed in the virtual environment, remove it:
 
    ```bash
