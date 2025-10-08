@@ -3,7 +3,8 @@
 This guide explains how to set up a Python virtual environment that can stream gazebo topics in WSL2 Ubuntu or Ubuntu.
 
 ---
-
+## Step 0: PX4 setup
+   If you do not have PX4 simulation follow this https://docs.px4.io/main/en/dev_setup/dev_env_linux_ubuntu.html#simulation-and-nuttx-pixhawk-targets
 ## Step 1: Create a Python Virtual Environment
 
 1. Create the directory you will use:
