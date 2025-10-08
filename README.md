@@ -17,7 +17,7 @@ This guide explains how to set up a Python virtual environment that can stream g
    ```bash
    python3 -m venv --system-site-packages .venv
    ```
-3. Activate the virtual environment:
+3. [Optional] Activate the virtual environment:
 
    ```bash
    source .venv/bin/activate
