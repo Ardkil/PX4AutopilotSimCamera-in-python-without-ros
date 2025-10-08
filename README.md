@@ -18,7 +18,7 @@ This is a guide to get camera data from PX4 gazebo without the ros bridge, using
    ```bash
    python3 -m venv --system-site-packages .venv
    ```
-3. [Optional] Activate the virtual environment:
+3. Optionally, Activate the virtual environment:
 
    ```bash
    source .venv/bin/activate
