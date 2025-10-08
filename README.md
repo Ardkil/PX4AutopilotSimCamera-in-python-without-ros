@@ -1,2 +1,119 @@
 # GazeboCameraWithoutRos
 This is a guide to get camera data from PX4 gazebo without the ros bridge, using Gstreamer and Gazebo transport
+
+# PX4 + Gazebo Python Setup Guide
+
+This guide explains how to set up a Python virtual environment that works with Gazebo and PX4, including Python bindings, GStreamer, and OpenCV support for streaming camera topics.
+
+---
+
+## Step 1: Create a Python Virtual Environment
+
+1. Create the directory you will use:
+
+   ```bash
+   mkdir <your_project_directory>
+   cd <your_project_directory>
+   ```
+2. Create a virtual environment with access to system site packages (required to use `gz` globally):
+
+   ```bash
+   python3 -m venv --system-site-packages .venv
+   ```
+3. Activate the virtual environment:
+
+   ```bash
+   source .venv/bin/activate
+   ```
+
+---
+
+## Step 2: Install Gazebo-Python Bridges
+
+1. Exit the virtual environment:
+
+   ```bash
+   deactivate
+   ```
+
+2. Install the required system packages (version should match your Gazebo version or use the latest available):
+
+   ```bash
+   sudo apt install python3-gz-transport13
+   sudo apt install python3-gz-msgs
+   ```
+
+   > `python3-gz-msgs` allows you to import Gazebo topics. Skip if already installed.
+
+3. Enter the virtual environment and test the import:
+
+   ```bash
+   source .venv/bin/activate
+   python3 -c "import gz.transport13 as gz; print('OK')"
+   ```
+
+---
+
+## Step 3: Install GStreamer and Build OpenCV with GStreamer
+
+1. If you already have OpenCV installed in the virtual environment, remove it:
+
+   ```bash
+   pip uninstall opencv-python opencv-contrib-python
+   ```
+
+2. Install GStreamer globally:
+
+   ```bash
+   sudo apt-get install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev \
+   libgstreamer-plugins-bad1.0-dev gstreamer1.0-plugins-base gstreamer1.0-plugins-good \
+   gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-tools \
+   gstreamer1.0-x gstreamer1.0-alsa gstreamer1.0-gl gstreamer1.0-gtk3 \
+   gstreamer1.0-qt5 gstreamer1.0-pulseaudio
+   ```
+
+3. Build OpenCV with GStreamer support in the virtual environment:
+
+   ```bash
+   # Navigate to a folder where you want the OpenCV repo
+   git clone --recursive https://github.com/skvark/opencv-python.git
+   cd opencv-python
+
+   # Enable GStreamer
+   export CMAKE_ARGS="-DWITH_GSTREAMER=ON"
+
+   # Upgrade pip and wheel
+   pip install --upgrade pip wheel
+
+   # Build the wheel (can take from 5 minutes to >2 hours depending on hardware)
+   pip wheel . --verbose
+
+   # Install the generated wheel (usually in the dist/ folder)
+   pip install dist/opencv_python*.whl
+   ```
+
+---
+
+## Step 4: Build Mono Camera PX4 SITL
+
+1. Navigate to your autopilot folder and build the PX4 SITL with the mono camera:
+
+   ```bash
+   make px4_sitl gz_x500_mono_cam
+   ```
+
+2. Verify if the camera topic is being published:
+
+   ```bash
+   gz topic -i -t /camera
+   ```
+
+3. Optionally, list all topics:
+
+   ```bash
+   gz topic --list
+   ```
+
+---
+
+✅ Your PX4 + Gazebo Python setup with camera streaming is ready!
