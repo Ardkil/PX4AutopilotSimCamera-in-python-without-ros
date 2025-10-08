@@ -1,6 +1,6 @@
 # PX4/Gazebo Camera Python Setup Guide
 
-This guide explains how to set up a Python virtual environment that can stream gazebo topics in WSL2 Ubuntu or Ubuntu.
+This is a guide to get camera data from PX4 gazebo without the ros bridge, using Gstreamer and Gazebo transport. You can then write the data to an udp port to use later or just use it
 
 ---
 ## Step 0: PX4 setup
