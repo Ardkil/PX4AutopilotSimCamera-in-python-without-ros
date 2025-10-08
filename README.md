@@ -37,10 +37,10 @@ This guide explains how to set up a Python virtual environment that can stream g
 
    ```bash
    sudo apt install python3-gz-transport13
-   sudo apt install python3-gz-msgs
+   sudo apt install python3-gz-msgs10
    ```
 
-   > `python3-gz-msgs` allows you to import Gazebo topics. Skip if already installed.
+   > `python3-gz-msgs10` allows you to import Gazebo topics. Skip if already installed.
 
 3. Enter the virtual environment and test the import:
 
