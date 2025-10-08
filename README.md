@@ -1,6 +1,6 @@
 # PX4/Gazebo Camera Python Setup Guide
 
-This guide explains how to set up a Python virtual environment that can stream gazebo topics.
+This guide explains how to set up a Python virtual environment that can stream gazebo topics in WSL2 Ubuntu or Ubuntu.
 
 ---
 
