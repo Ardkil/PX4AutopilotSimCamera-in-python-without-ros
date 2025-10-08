@@ -1,7 +1,4 @@
-# GazeboCameraWithoutRos
-This is a guide to get camera data from PX4 gazebo without the ros bridge, using Gstreamer and Gazebo transport
-
-# PX4 + Gazebo Python Setup Guide
+# PX4/Gazebo Camera Python Setup Guide
 
 This guide explains how to set up a Python virtual environment that works with Gazebo and PX4, including Python bindings, GStreamer, and OpenCV support for streaming camera topics.
 
