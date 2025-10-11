@@ -95,7 +95,7 @@ This part is acquired from https://discuss.bluerobotics.com/t/opencv-python-with
    # Install the generated wheel (usually in the dist/ folder)
    pip install dist/opencv_python*.whl
    ```
-4. Check buildi Gstreaner should be ON and GUI shouldn't be NONE:
+4. Check build, Gstreamer should be ON and GUI should be GTK
    ```bash
    python3 -c "import cv2; print(cv2.getBuildInformation())"
    ```
