@@ -84,7 +84,7 @@ This part is acquired from https://discuss.bluerobotics.com/t/opencv-python-with
    cd opencv-python
 
    # Enable GStreamer
-   export CMAKE_ARGS="-DWITH_GSTREAMER=ON"
+   export CMAKE_ARGS="-DWITH_GSTREAMER=ON -DWITH_GTK=ON"
 
    # Upgrade pip and wheel
    pip install --upgrade pip wheel
