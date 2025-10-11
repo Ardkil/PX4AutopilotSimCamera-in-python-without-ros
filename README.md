@@ -69,7 +69,7 @@ This part is acquired from https://discuss.bluerobotics.com/t/opencv-python-with
    gstreamer1.0-x gstreamer1.0-alsa gstreamer1.0-gl gstreamer1.0-gtk3 \
    gstreamer1.0-qt5 gstreamer1.0-pulseaudio
    ```
-2.5 In case you do not have GUI interfaces needed to show images in opencv, do 
+2,5. In case you do not have GUI interfaces needed to show images in opencv, do 
 
    ```bash
    sudo apt update
