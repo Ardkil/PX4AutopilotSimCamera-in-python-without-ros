@@ -69,6 +69,12 @@ This part is acquired from https://discuss.bluerobotics.com/t/opencv-python-with
    gstreamer1.0-x gstreamer1.0-alsa gstreamer1.0-gl gstreamer1.0-gtk3 \
    gstreamer1.0-qt5 gstreamer1.0-pulseaudio
    ```
+2.5 In case you do not have GUI interfaces needed to show images in opencv, do 
+
+   ```bash
+   sudo apt update
+   sudo apt install -y libgtk2.0-dev pkg-config
+   ```
 
 3. Build OpenCV with GStreamer support in the virtual environment:
 
