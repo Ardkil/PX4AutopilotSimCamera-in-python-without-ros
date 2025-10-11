@@ -95,7 +95,10 @@ This part is acquired from https://discuss.bluerobotics.com/t/opencv-python-with
    # Install the generated wheel (usually in the dist/ folder)
    pip install dist/opencv_python*.whl
    ```
-
+4. Check build:
+   ```bash
+   python3 -c "import cv2; print(cv2.getBuildInformation())"
+   ```
 ---
 
 ## Step 4: Build Mono Camera PX4 SITL
