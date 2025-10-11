@@ -111,6 +111,10 @@ This part is acquired from https://discuss.bluerobotics.com/t/opencv-python-with
    ```bash
    gz topic --list
    ```
+   
+NOTE:
+/camera is nonexistant in some later versions of the autopilot instead to the step 3 and locate the topic with /image, it could be something like 
+/world/default/model/x500_mono_cam_down_0/link/camera_link/sensor/imager/image
 
 ---
 
