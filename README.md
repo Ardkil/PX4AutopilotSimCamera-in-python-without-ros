@@ -98,7 +98,7 @@ This part is acquired from https://discuss.bluerobotics.com/t/opencv-python-with
 3.5 in case the last line fails, try
 
    ```bash
-   pip install dist/opencv_python*.whl
+   pip install opencv_python*.whl
    ```
 4. Check build, Gstreamer should be ON and GUI should be GTK
    ```bash
